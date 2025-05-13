@@ -1,0 +1,17 @@
+mpic++ -o  main main.cpp -lmetis -fopenmp
+mpirun -np 4 ./main
+mpirun -np 4 --oversubscribe ./main
+time mpirun -np 4 --oversubscribe ./main
+
+real — total wall time
+user — time spent in user mode (CPU time)
+sys — time spent in kernel mode (I/O or system calls)
+
+
+
+g++ -fopenmp -o p serial.cpp
+./p
+
+
+mpic++ -fopenmp -o main main.cpp -lmetis
+time mpirun -np 4 --oversubscribe ./main
